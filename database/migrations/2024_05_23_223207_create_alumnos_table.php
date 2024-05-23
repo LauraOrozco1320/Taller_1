@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->String('name');
             $table->String('last_name');
+            $table->text('expediente');
             $table->timestamps();
-
-            
         });
     }
 

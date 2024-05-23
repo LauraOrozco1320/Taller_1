@@ -15,13 +15,19 @@ return new class extends Migration
             $table->id();
             $table->String('name');
 
-            //atributos foraneos 
-            $table->unsignedBigInteger('alumno_id')->nullable();
+            //Atributos Foraneos
+                $table->unsignedBigInteger('alumno_id')->nullable();
+                $table->unsignedBigInteger('profesor_id')->nullable();
 
-            //referencia
-            $table->foreign('alumno_id')
+            //referencia alumno
+                $table->foreign('alumno_id')
+                    ->references('id')
+                    ->on('alumnos')->onDelete('set null');
+
+            //referencia profesor
+                $table->foreign('profesor_id')
                 ->references('id')
-                ->on('alumnos')->onDelete('set null');
+                ->on('profesors')->onDelete('set null');
             $table->timestamps();
         });
     }
