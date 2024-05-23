@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('profesors', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
-            $table->double('cell_phone');
-            $table->text('adress');
+            $table->string('name');
+            $table->string('adress');
+            $table->string('phone');
             $table->timestamps();
         });
     }

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alumno extends Model
 {
-    //Relacion Uno a Muchos con la tabla modulo
-  public function modulo(){
-    return $this->hasMany('App\Models\modulo');
-  }
+      //Relacion Uno a Muchos con modulo
+      public function modulo(){
+        return $this->hasMany('App\Models\modulo');
+    }
 }

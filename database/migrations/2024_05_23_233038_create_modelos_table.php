@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
+            $table->string('name');
 
-            //Atributos Foraneos
+            //Atributos foraneos
                 $table->unsignedBigInteger('alumno_id')->nullable();
                 $table->unsignedBigInteger('profesor_id')->nullable();
 
-            //referencia alumno
+                //referenciando la tabla alumno
                 $table->foreign('alumno_id')
                     ->references('id')
                     ->on('alumnos')->onDelete('set null');
 
-            //referencia profesor
+                    //referenciando la tabla profesor
                 $table->foreign('profesor_id')
                 ->references('id')
                 ->on('profesors')->onDelete('set null');
