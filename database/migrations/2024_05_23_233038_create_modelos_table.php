@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modulos', function (Blueprint $table) {
+        Schema::create('modelo', function (Blueprint $table) {
             $table->id();
             $table->string('name');
 
@@ -24,7 +24,7 @@ return new class extends Migration
                     ->references('id')
                     ->on('alumnos')->onDelete('set null');
 
-                    //referencia profesor
+                //referencia profesor
                 $table->foreign('profesor_id')
                 ->references('id')
                 ->on('profesors')->onDelete('set null');
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('modulos');
+        Schema::dropIfExists('modelo');
     }
 };

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class profesor extends Model
 {
 
-   public function modulo(){
+   public function modelo(){
     //  Relacion Uno A Uno
-   return $this->hasOne('App\Models\modulo');
+   return $this->hasOne('App\Models\modelo');
 }
 }
